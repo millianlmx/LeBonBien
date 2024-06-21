@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="fr.michka.lebonbien.model.TiersEntity">
+        <table name="TIERS" schema="michkaDB" catalog=""/>
+        <attributes>
+            <id name="idTiers">
+                <column name="ID_TIERS" precision="-1"/>
+            </id>
+            <basic name="nomTiers">
+                <column name="NOM_TIERS" length="100"/>
+            </basic>
+            <basic name="prenomTiers">
+                <column name="PRENOM_TIERS" nullable="false" length="100"/>
+            </basic>
+            <basic name="telTiers">
+                <column name="TEL_TIERS" length="10"/>
+            </basic>
+            <basic name="mailTiers">
+                <column name="MAIL_TIERS" nullable="false" length="100"/>
+            </basic>
+            <basic name="typeTiers">
+                <column name="TYPE_TIERS" precision="-1"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>

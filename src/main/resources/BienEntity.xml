@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="fr.michka.lebonbien.model.BienEntity">
+        <table name="BIEN" schema="michkaDB" catalog=""/>
+        <attributes>
+            <id name="idBien">
+                <column name="ID_BIEN" precision="-1"/>
+            </id>
+            <basic name="libBien">
+                <column name="LIB_BIEN" length="50"/>
+            </basic>
+            <basic name="adrNoVoie">
+                <column name="ADR_NO_VOIE" nullable="false" length="7"/>
+            </basic>
+            <basic name="nomVoie">
+                <column name="NOM_VOIE" nullable="false" length="100"/>
+            </basic>
+            <basic name="codePostal">
+                <column name="CODE_POSTAL" length="5"/>
+            </basic>
+            <basic name="commune">
+                <column name="COMMUNE" length="100"/>
+            </basic>
+            <basic name="complementAdresse">
+                <column name="COMPLEMENT_ADRESSE" nullable="false" length="5"/>
+            </basic>
+            <basic name="idProprietaire">
+                <column name="ID_PROPRIETAIRE" precision="-1"/>
+            </basic>
+            <basic name="surface">
+                <column name="SURFACE" precision="2"/>
+            </basic>
+            <basic name="nbPieces">
+                <column name="NB_PIECES" precision="-1"/>
+            </basic>
+            <basic name="nbChambres">
+                <column name="NB_CHAMBRES" precision="-1"/>
+            </basic>
+            <basic name="nbSdb">
+                <column name="NB_SDB" precision="-1"/>
+            </basic>
+            <basic name="type">
+                <column name="TYPE" length="50"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-source-infos>
+      <data-source-info id="c5de21fd-35a7-4687-8acc-752a39e7d686" persistence-unit-name="michkaDB" />
+      <data-source-info id="c5de21fd-35a7-4687-8acc-752a39e7d686" persistence-unit-name="michkaDBTest" />
+      <data-source-info id="c5de21fd-35a7-4687-8acc-752a39e7d686" persistence-unit-name="MichkaDB1" />
+      <data-source-info id="c5de21fd-35a7-4687-8acc-752a39e7d686" persistence-unit-name="MichkaDB" />
+    </data-source-infos>
+  </component>
+</project>
