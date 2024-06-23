@@ -1,9 +1,23 @@
 package fr.michka.lebonbien.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Filter;
+import org.hibernate.annotations.FilterDef;
+import org.hibernate.annotations.ParamDef;
 
 @Entity
 @Table(name = "TIERS", schema = "michkaDB", catalog = "")
+@FilterDef(
+        name="byTypeTiers",
+        parameters = @ParamDef(
+                name="TYPE_TIERS",
+                type=int.class
+        )
+)
+@Filter(
+        name="byTypeTiers",
+        condition="TYPE_TIERS = :TYPE_TIERS"
+)
 public class TiersEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

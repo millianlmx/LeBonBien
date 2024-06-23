@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="664.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.michka.lebonbien.controller.AnnonceController">
+   <children>
+      <Label alignment="TOP_LEFT" layoutX="227.0" layoutY="110.0" prefHeight="26.0" prefWidth="124.0" text="Tous les biens :" />
+      <MenuButton layoutX="744.0" layoutY="106.0" mnemonicParsing="false" text="Filtres">
+         <items>
+            <MenuItem mnemonicParsing="false">
+               <graphic>
+                  <MenuButton mnemonicParsing="false" text="Types">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Appartements" />
+                      <MenuItem mnemonicParsing="false" text="Maisons" />
+                    </items>
+                  </MenuButton>
+               </graphic>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false">
+               <graphic>
+                  <MenuButton mnemonicParsing="false" text="Superficie">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="&lt;50m2" />
+                      <MenuItem mnemonicParsing="false" text="Entre 50 et 100 m2" />
+                        <MenuItem mnemonicParsing="false" text="&gt;100 m2" />
+                    </items>
+                  </MenuButton>
+               </graphic>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false">
+               <graphic>
+                  <MenuButton mnemonicParsing="false" text="Prix">
+                    <items>
+                        <CheckMenuItem mnemonicParsing="false" text="&lt;500e" />
+                        <CheckMenuItem mnemonicParsing="false" text="Entre 500 et 1000e" />
+                        <CheckMenuItem mnemonicParsing="false" text="&gt;1000e" />
+                    </items>
+                  </MenuButton>
+               </graphic>
+            </MenuItem>
+         </items>
+      </MenuButton>
+      <FontAwesomeIcon glyphName="KEY" layoutX="652.0" layoutY="65.0" size="2em" text="" wrappingWidth="25.0" />
+      <Label layoutX="682.0" layoutY="29.0" prefHeight="52.0" prefWidth="159.0" text="CM Immobilier">
+         <font>
+            <Font name="Comfortaa SemiBold" size="20.0" />
+         </font>
+      </Label>
+      <AnchorPane prefHeight="710.0" prefWidth="197.0" style="-fx-background-color: ORANGE;">
+         <children>
+            <Circle layoutX="46.0" layoutY="46.0" radius="32.0" stroke="BLACK" strokeType="INSIDE">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.2823529541492462" green="0.5686274766921997" blue="0.9686274528503418" opacity="0.9100000262260437" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+            <FontAwesomeIcon glyphName="USER" layoutX="20.0" layoutY="59.0" size="3em" text="" textAlignment="CENTER" wrappingWidth="53.0" />
+            <Label alignment="CENTER" layoutX="81.0" layoutY="27.0" prefHeight="39.0" prefWidth="107.0" text="Héloise LUSSIER" />
+            <MFXButton layoutX="23.0" layoutY="176.0" prefHeight="39.0" prefWidth="151.0" style="-fx-background-color: #4891f7;" text="Tous les biens" textFill="WHITE" />
+            <MFXButton layoutX="23.0" layoutY="237.0" prefHeight="39.0" prefWidth="151.0" style="-fx-background-color: #4891f7;" text="Biens de l'agent" textFill="WHITE" />
+            <MFXButton layoutX="23.0" layoutY="295.0" prefHeight="39.0" prefWidth="151.0" style="-fx-background-color: #4891f7;" text="Propriétaires" textFill="WHITE" fx:id="switch2Proprietaires"/>
+            <MFXButton layoutX="34.0" layoutY="654.0" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #4891f7;" text="Déconnexion" textFill="WHITE" />
+         </children></AnchorPane>
+      <ScrollPane layoutX="215.0" layoutY="146.0" prefHeight="564.0" prefWidth="629.0" style="-fx-background-color: transparent;">
+         <content>
+            <GridPane alignment="CENTER" hgap="10.0" minHeight="570.0" prefWidth="606.0" vgap="10.0" fx:id="annonceGrid">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="348.0" minHeight="10.0" prefHeight="278.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="305.0" minHeight="10.0" prefHeight="269.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+               </children>
+            </GridPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

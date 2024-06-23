@@ -1,0 +1,29 @@
+.menu-button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-padding: 4px;
+}
+
+.menu-button:hover {
+    -fx-background-color: #1976D2;
+}
+
+.menu-button:pressed {
+    -fx-background-color: #1565C0;
+}
+
+.menu-item {
+    -fx-background-color: white;
+    -fx-text-fill: #2196F3;
+    -fx-padding: 8 16 8 16;
+}
+
+.menu-item:hover {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+.menu-item:pressed {
+    -fx-background-color: #1976D2;
+    -fx-text-fill: white;
+}

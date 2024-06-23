@@ -4,42 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2c6b301-2835-43ad-b071-a8fd825e9887" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy-datasource.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/dao/AnnonceDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/dao/DAOInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/model/AnnonceEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/model/BienEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/model/EquipementEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/model/TiersEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/model/TypeTiersEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/utility/HibernateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AnnonceEntity.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/BienEntity.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/EquipementEntity.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/Persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TiersEntity.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TypeTiersEntity.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/michka/lebonbien/hello-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/table.sql" afterDir="false" />
+    <list default="true" id="e2c6b301-2835-43ad-b071-a8fd825e9887" name="Changes" comment="Initial Commit, with DAO set up partially.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/components/Annonce.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/components/Proprietaire.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/controller/AgentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/controller/AnnonceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/controller/ProprietaireController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/controller/TierController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/dao/BienDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/dao/TierDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/michka/lebonbien/annonce.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/michka/lebonbien/material-menu-button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/michka/lebonbien/tier.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/dao/AnnonceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/dao/AnnonceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/model/TiersEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/model/TiersEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/utility/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/utility/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/Persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +35,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="com.haulmont.jpb.JpaEntity" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="CSS File" />
+        <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -87,15 +74,17 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/millian/IdeaProjects/LeBonBien/src/main/resources/META-INF/Persistence.xml&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/millian/Téléchargements/fontawesomefx-8.2.jar&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -106,12 +95,19 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/META-INF" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/main/resources/META-INF" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="fr.michka.lebonbien.model" />
       <recent name="fr.michka.lebonbien.Entity" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="fr.michka.lebonbien.controller" />
+      <recent name="fr.michka.lebonbien.components" />
+      <recent name="fr.michka.lebonbien.dao" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -150,11 +146,27 @@
       <workItem from="1718703035327" duration="3052000" />
       <workItem from="1718727924563" duration="852000" />
       <workItem from="1718862021725" duration="15301000" />
-      <workItem from="1719002636464" duration="1523000" />
+      <workItem from="1719002636464" duration="1806000" />
+      <workItem from="1719069940959" duration="22500000" />
+      <workItem from="1719134764001" duration="1610000" />
+      <workItem from="1719149265779" duration="7458000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit, with DAO set up partially.">
+      <option name="closed" value="true" />
+      <created>1719009915148</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1719009915148</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit, with DAO set up partially." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit, with DAO set up partially." />
   </component>
 </project>

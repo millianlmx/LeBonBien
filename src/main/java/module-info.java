@@ -6,6 +6,8 @@ module fr.michka.lebonbien {
     requires org.hibernate.orm.core;
 
     opens fr.michka.lebonbien to javafx.fxml;
+    opens fr.michka.lebonbien.controller to javafx.fxml;
     opens fr.michka.lebonbien.model to org.hibernate.orm.core;
     exports fr.michka.lebonbien;
+    exports fr.michka.lebonbien.controller;
 }

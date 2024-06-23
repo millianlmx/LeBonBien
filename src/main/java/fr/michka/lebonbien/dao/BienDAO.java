@@ -1,18 +1,19 @@
 package fr.michka.lebonbien.dao;
 
 import fr.michka.lebonbien.model.AnnonceEntity;
+import fr.michka.lebonbien.model.BienEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
-public class AnnonceDAO implements DAOInterface<AnnonceEntity>{
+public class BienDAO implements DAOInterface<BienEntity>{
     private static EntityManager entityManager;
-    public AnnonceDAO() {}
+    public BienDAO() {}
 
     public static void initialize(EntityManager entityManager) {
-        AnnonceDAO.entityManager = entityManager;
+        BienDAO.entityManager = entityManager;
     }
     @Override
-    public int create(AnnonceEntity data) {
+    public int create(BienEntity data) {
         EntityTransaction transaction = entityManager.getTransaction();
         System.out.println("Transaction created: " + transaction);
         entityManager.persist(data);
@@ -22,26 +23,26 @@ public class AnnonceDAO implements DAOInterface<AnnonceEntity>{
         return 0;
     }
     @Override
-    public int update(AnnonceEntity data) {
+    public int update(BienEntity data) {
          EntityTransaction transaction = entityManager.getTransaction();
          entityManager.merge(data);
          transaction.commit();
          return 0;
     }
     @Override
-    public int delete(AnnonceEntity data) {
+    public int delete(BienEntity data) {
          EntityTransaction transaction = entityManager.getTransaction();
          entityManager.remove(data);
          transaction.commit();
          return 0;
     }
     @Override
-    public AnnonceEntity findById(int id) {
-        return entityManager.find(AnnonceEntity.class, id);
+    public BienEntity findById(int id) {
+        return entityManager.find(BienEntity.class, id);
     }
 
     @Override
-    public AnnonceEntity[] findAll() {
-        return entityManager.createQuery("from AnnonceEntity", AnnonceEntity.class).getResultList().toArray(new AnnonceEntity[0]);
+    public BienEntity[] findAll() {
+        return entityManager.createQuery("from BienEntity", BienEntity.class).getResultList().toArray(new BienEntity[0]);
     }
 }
