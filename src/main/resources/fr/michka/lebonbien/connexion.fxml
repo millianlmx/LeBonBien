@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="776.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="421.0" prefWidth="565.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Label layoutX="387.0" layoutY="32.0" prefHeight="64.0" prefWidth="249.0" text="CM Immobilier">
+               <font>
+                  <Font name="Comfortaa SemiBold" size="31.0" />
+               </font>
+            </Label>
+            <FontAwesomeIcon glyphName="KEY" layoutX="594.0" layoutY="58.0" size="4em" wrappingWidth="53.0" />
+            <Label layoutX="235.0" layoutY="103.0" prefHeight="25.0" prefWidth="140.0" text="Bienvenue !">
+               <font>
+                  <Font name="Comfortaa Medium" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="235.0" layoutY="135.0" prefHeight="25.0" prefWidth="273.0" text="Sélectionner votre profil :">
+               <font>
+                  <Font name="Comfortaa Medium" size="19.0" />
+               </font>
+            </Label>
+            <AnchorPane prefHeight="776.0" prefWidth="202.0" style="-fx-background-color: ORANGE;">
+               <children>
+                  <ImageView fitHeight="158.0" fitWidth="157.0" layoutX="21.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Téléchargements/3d-rendering-modern-cozy-house-with-garage-pool-sale-rent-with-beautiful-landscaping-o_1015980-505745.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="107.0" fitWidth="161.0" layoutX="21.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Téléchargements/3d-rendering-loft-luxury-living-room-with-bookshelf_105762-2099.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="151.0" fitWidth="157.0" layoutX="18.0" layoutY="620.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Téléchargements/cozy-living-room-modern-apartment_181624-58445.jpg" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+            <ScrollPane layoutX="235.0" layoutY="188.0" prefHeight="554.0" prefWidth="592.0" style="-fx-background-color: transparent;">
+               <content>
+                  <GridPane prefHeight="552.0" prefWidth="590.0" fx:id="agentsGrid">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+
+                     </children>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
