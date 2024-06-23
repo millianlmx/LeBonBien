@@ -1,19 +1,13 @@
 package fr.michka.lebonbien.controller;
 
 import fr.michka.lebonbien.Application;
-import fr.michka.lebonbien.components.Proprietaire;
+import fr.michka.lebonbien.components.Tier;
 import fr.michka.lebonbien.dao.TierDAO;
 import fr.michka.lebonbien.model.TiersEntity;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class ProprietaireController extends TierController{
     @FXML
@@ -24,6 +18,10 @@ public class ProprietaireController extends TierController{
     private Button switch2Agents;
     @FXML
     private Button switch2Proprietaires;
+    @FXML
+    private Button deconnexion;
+    @FXML
+    private Label agentNameLabel;
 
     private Application application;
 
@@ -34,7 +32,7 @@ public class ProprietaireController extends TierController{
         TiersEntity[] tiersEntities = tierDAO.findallProprietaires();
         for (TiersEntity tiersEntity : tiersEntities) {
             tiersGrid.add(
-                    new Proprietaire(tiersEntity).getComponent(),
+                    new Tier(tiersEntity).getComponent(),
                     tiersGrid.getChildren().toArray().length % 3,
                     tiersGrid.getChildren().toArray().length / 3
             );

@@ -1,12 +1,26 @@
 package fr.michka.lebonbien.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Filter;
+import org.hibernate.annotations.FilterDef;
+import org.hibernate.annotations.ParamDef;
 
 import java.math.BigDecimal;
 import java.sql.Date;
 
 @Entity
 @Table(name = "ANNONCE", schema = "michkaDB")
+@FilterDef(
+        name="byAgent",
+        parameters = @ParamDef(
+                name="ID_AGENT",
+                type=int.class
+        )
+)
+@Filter(
+        name="byAgent",
+        condition="ID_AGENT = :ID_AGENT"
+)
 public class AnnonceEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

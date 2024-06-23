@@ -4,27 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2c6b301-2835-43ad-b071-a8fd825e9887" name="Changes" comment="Initial Commit, with DAO set up partially.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/components/Annonce.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/components/Proprietaire.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/controller/AgentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/controller/AnnonceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/controller/ProprietaireController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/controller/TierController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/dao/BienDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/dao/TierDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/michka/lebonbien/annonce.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/michka/lebonbien/material-menu-button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/michka/lebonbien/tier.fxml" afterDir="false" />
+    <list default="true" id="e2c6b301-2835-43ad-b071-a8fd825e9887" name="Changes" comment="Adding house, house holders, agents views. Adding Scene switch on click.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/controller/ConnexionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/components/Proprietaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/components/Tier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/controller/AgentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/controller/AgentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/controller/AnnonceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/controller/AnnonceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/controller/ProprietaireController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/controller/ProprietaireController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/controller/TierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/controller/TierController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/dao/AnnonceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/dao/AnnonceDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/model/TiersEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/model/TiersEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/utility/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/utility/HibernateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/Persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/dao/BienDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/dao/BienDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/model/AnnonceEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/michka/lebonbien/model/AnnonceEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/michka/lebonbien/annonces.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/michka/lebonbien/annonces.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/michka/lebonbien/tier.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/michka/lebonbien/tier.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/michka/lebonbien/tiers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/michka/lebonbien/tiers.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +143,8 @@
       <workItem from="1719002636464" duration="1806000" />
       <workItem from="1719069940959" duration="22500000" />
       <workItem from="1719134764001" duration="1610000" />
-      <workItem from="1719149265779" duration="7458000" />
+      <workItem from="1719149265779" duration="10577000" />
+      <workItem from="1719160275805" duration="4559000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit, with DAO set up partially.">
       <option name="closed" value="true" />
@@ -159,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719009915148</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adding house, house holders, agents views. Adding Scene switch on click.">
+      <option name="closed" value="true" />
+      <created>1719157261351</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1719157261352</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +170,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit, with DAO set up partially." />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit, with DAO set up partially." />
+    <MESSAGE value="Adding house, house holders, agents views. Adding Scene switch on click." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding house, house holders, agents views. Adding Scene switch on click." />
   </component>
 </project>

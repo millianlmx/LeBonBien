@@ -2,8 +2,6 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -26,7 +24,7 @@
          </font>
       </Label>
       <FontAwesomeIcon glyphName="KEY" layoutX="594.0" layoutY="58.0" size="4em" wrappingWidth="53.0" />
-      <Label layoutX="235.0" layoutY="135.0" prefHeight="25.0" prefWidth="273.0" text="Liste des propriétaires :">
+      <Label layoutX="235.0" layoutY="135.0" prefHeight="25.0" prefWidth="273.0" text="Liste des propriétaires :" fx:id="listOf">
          <font>
             <Font name="Comfortaa Medium" size="19.0" />
          </font>
@@ -52,14 +50,14 @@
                </fill>
             </Circle>
             <FontAwesomeIcon glyphName="USER" layoutX="20.0" layoutY="59.0" size="3em" text="" textAlignment="CENTER" wrappingWidth="53.0" />
-            <Label alignment="CENTER" layoutX="81.0" layoutY="27.0" prefHeight="39.0" prefWidth="107.0" text="Héloise LUSSIER" />
+            <Label alignment="CENTER" layoutX="81.0" layoutY="27.0" prefHeight="39.0" prefWidth="107.0" text="Héloise LUSSIER" fx:id="agentNameLabel"/>
             <MFXButton layoutX="26.0" layoutY="180.0" prefHeight="39.0" prefWidth="151.0" style="-fx-background-color: #4891f7;" text="Tous les biens" textFill="WHITE" fx:id="switch2Annonces"/>
             <MFXButton layoutX="26.0" layoutY="235.0" prefHeight="39.0" prefWidth="151.0" style="-fx-background-color: #4891f7;" text="Agents" textFill="WHITE" fx:id="switch2Agents"/>
-            <MFXButton layoutX="34.0" layoutY="722.0" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #4891f7;" text="Déconnexion" textFill="WHITE" />
+            <MFXButton layoutX="34.0" layoutY="722.0" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #4891f7;" text="Déconnexion" textFill="WHITE" fx:id="deconnexion"/>
             <MFXButton layoutX="26.0" layoutY="288.0" prefHeight="39.0" prefWidth="151.0" style="-fx-background-color: #4891f7;" text="Propriétaires" textFill="WHITE" fx:id="switch2Proprietaires"/>
          </children>
       </AnchorPane>
-      <MFXButton layoutX="584.0" layoutY="708.0" prefHeight="40.0" prefWidth="223.0" style="-fx-background-color: GREY;" text="Ajouter un propriétaire" />
+      <MFXButton layoutX="584.0" layoutY="708.0" prefHeight="40.0" prefWidth="223.0" style="-fx-background-color: GREY;" text="Ajouter un propriétaire" fx:id="ajouterTierButton"/>
       <ScrollPane layoutX="235.0" layoutY="178.0" prefHeight="514.0" prefWidth="563.0" style="-fx-background-color: transparent;">
          <content>
             <GridPane prefHeight="512.0" prefWidth="561.0" fx:id="tiersGrid">

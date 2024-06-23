@@ -1,6 +1,5 @@
 package fr.michka.lebonbien.dao;
 
-import fr.michka.lebonbien.model.AnnonceEntity;
 import fr.michka.lebonbien.model.BienEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;

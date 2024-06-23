@@ -3,6 +3,7 @@ package fr.michka.lebonbien.dao;
 import fr.michka.lebonbien.model.AnnonceEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import org.hibernate.Session;
 
 public class AnnonceDAO implements DAOInterface<AnnonceEntity>{
     private static EntityManager entityManager;
@@ -42,6 +43,11 @@ public class AnnonceDAO implements DAOInterface<AnnonceEntity>{
 
     @Override
     public AnnonceEntity[] findAll() {
+        return entityManager.createQuery("from AnnonceEntity", AnnonceEntity.class).getResultList().toArray(new AnnonceEntity[0]);
+    }
+
+    public AnnonceEntity[] findAllRelatedToAgent(int agentId) {
+        entityManager.unwrap(Session.class).enableFilter("byAgent").setParameter("ID_AGENT", agentId);
         return entityManager.createQuery("from AnnonceEntity", AnnonceEntity.class).getResultList().toArray(new AnnonceEntity[0]);
     }
 }

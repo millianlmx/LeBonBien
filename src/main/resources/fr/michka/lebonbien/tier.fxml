@@ -35,7 +35,7 @@
                 <Font name="Comfortaa Regular" size="16.0" />
             </font>
         </Label>
-        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="23.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="107.0" style="-fx-background-color: none;" textFill="WHITE">
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="23.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="107.0" style="-fx-background-color: transparent;" textFill="WHITE" fx:id="agentButton">
             <graphic>
                 <FontAwesomeIcon glyphName="USER" size="8em" text="" textAlignment="CENTER" wrappingWidth="82.0" />
             </graphic>
