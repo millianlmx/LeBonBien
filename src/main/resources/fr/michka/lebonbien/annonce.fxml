@@ -8,6 +8,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.geometry.Insets?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.Cursor?>
 <AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" prefHeight="284.0" prefWidth="292.0" style="-fx-background-color: #C0C0C0;" fx:id="annonce">
     <children>
         <MFXButton contentDisplay="BOTTOM" layoutY="30.0" prefHeight="164.0" prefWidth="292.0" style="-fx-background-color: #C0C0C0;" text="" wrapText="true" AnchorPane.topAnchor="30.0">
@@ -22,6 +24,22 @@
         <Label layoutX="14.0" layoutY="224.0" text="Titre annonce :" fx:id="title"/>
         <Label layoutX="14.0" layoutY="240.0" text="Surface" fx:id="area"/>
         <Label layoutX="250.0" layoutY="240.0" text="Prix" fx:id="price"/>
+        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: none; -fx-border-color: none;" fx:id="supprimerAnnonce">
+            <graphic>
+                <FontAwesomeIcon fill="#942424" glyphName="TIMES" selectionFill="#e50000" size="2em" wrappingWidth="20.428571701049805" />
+            </graphic>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button layoutX="47.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-color: none; -fx-border-color: none;">
+            <graphic>
+                <FontAwesomeIcon glyphName="EDIT" selectionFill="#e50000" size="2em" />
+            </graphic>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
     </children>
     <GridPane.margin>
         <Insets />

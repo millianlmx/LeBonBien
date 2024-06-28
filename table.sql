@@ -49,6 +49,7 @@ CREATE TABLE `BIEN` (
                         `COMMUNE` varchar(100) NOT NULL COMMENT 'Nom de la commune',
                         `COMPLEMENT_ADRESSE` varchar(7) DEFAULT NULL COMMENT 'Exemple : N° appartement, étage ...',
                         `ID_PROPRIETAIRE` int NOT NULL,
+                        `ID_AGENT` int not NULL,
                         `SURFACE` decimal(10, 2) NOT NULL COMMENT 'Surface du bien en m²',
                         `NB_PIECES` int NOT NULL COMMENT 'Nombre de pièces',
                         `NB_CHAMBRES` int NOT NULL COMMENT 'Nombre de chambres',
@@ -56,6 +57,8 @@ CREATE TABLE `BIEN` (
                         `TYPE` varchar(50) NOT NULL COMMENT 'Type de bien Maison, Appartement, T2, T3 ...',
                         PRIMARY KEY (`ID_BIEN`),
                         KEY `BIEN_PROPRIETAIRE_fk` (`ID_PROPRIETAIRE`),
+                        KEY `BIEN_AGENT_kf` (`ID_AGENT`),
+                        CONSTRAINT `BIEN_AGENT_fk` FOREIGN KEY (`ID_AGENT`) REFERENCES `TIERS` (`ID_TIERS`),
                         CONSTRAINT `BIEN_PROPRIETAIRE_fk` FOREIGN KEY (`ID_PROPRIETAIRE`) REFERENCES `TIERS` (`ID_TIERS`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -97,3 +100,47 @@ CREATE TABLE `TYPE_TIERS` (
                               PRIMARY KEY (`ID_TYPE_TIERS`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+INSERT INTO `TIERS` VALUES (6,'DUPONT','PIERRE','00000000','pdupont@gmail.com',2),(7,'DURAND','MARIE','00000000','mdurand@gmail.com',2),(8,'DUVAL','Jeanne','00000000',NULL,1),(9,'DUPOND','Anne','0678787878',NULL,1),(10,'CURIE','Sylvain','0678787878',NULL,2),(11,'CURIE','Marie','0678787878',NULL,2),(12,'EINSTEIN','Jane','0678787878',NULL,1),(13,'EINSTEIN','Pierre','0678787878',NULL,2),(14,'EINSTEIN','Albert','0678787878',NULL,2),(15,'EINSTEIN','Zoe','0678787878',NULL,2),(16,'VALLE','Isabelle','0909090909','',1),(17,'MICHKA','Chloé','0909090909',NULL,3);
+
+INSERT INTO `TYPE_TIERS` VALUES (1,'LOCATAIRE'),(2,'PROPRIETAIRE'),(3,'AGENT IMMOBILIER');
+
+INSERT INTO BIEN (LIB_BIEN, ADR_NO_VOIE, NOM_VOIE, CODE_POSTAL, COMMUNE, COMPLEMENT_ADRESSE, ID_PROPRIETAIRE, ID_AGENT, SURFACE, NB_PIECES, NB_CHAMBRES, NB_SDB, TYPE) VALUES
+                                                                                                                                                                           ('Appartement lumineux', '15', 'Rue de la Paix', '75001', 'Paris', '3ème étage', 6, 17, 65.5, 3, 2, 1, 'Appartement'),
+                                                                                                                                                                           ('Maison avec jardin', '24', 'Avenue des Fleurs', '69003', 'Lyon', NULL, 7, 17, 120.0, 5, 3, 2, 'Maison'),
+                                                                                                                                                                           ('Studio étudiant', '8', 'Rue de l''Université', '31000', 'Toulouse', 'Rez-de-chaussée', 10, 17, 25.0, 1, 1, 1, 'Studio'),
+                                                                                                                                                                           ('Loft moderne', '42', 'Boulevard Haussmann', '75008', 'Paris', '5ème étage', 11, 17, 85.0, 2, 1, 1, 'Loft'),
+                                                                                                                                                                           ('Villa avec piscine', '10', 'Chemin des Oliviers', '06160', 'Antibes', NULL, 13, 17, 200.0, 6, 4, 3, 'Villa');
+
+INSERT INTO BIEN (LIB_BIEN, ADR_NO_VOIE, NOM_VOIE, CODE_POSTAL, COMMUNE, COMPLEMENT_ADRESSE, ID_PROPRIETAIRE, ID_AGENT, SURFACE, NB_PIECES, NB_CHAMBRES, NB_SDB, TYPE) VALUES
+                                                                                                                                                                           ('Appartement cosy', '8', 'Rue de la République', '69002', 'Lyon', '4ème ét', 6, 17, 45.5, 2, 1, 1, 'T2'),
+                                                                                                                                                                           ('Maison de ville', '12', 'Avenue Jean Jaurès', '31500', 'Toulouse', NULL, 7, 17, 110.0, 4, 3, 2, 'Maison'),
+                                                                                                                                                                           ('Studio meublé', '5', 'Rue des Étudiants', '34000', 'Montpellier', 'Bât B', 10, 17, 20.0, 1, 1, 1, 'Studio'),
+                                                                                                                                                                           ('Duplex moderne', '18', 'Boulevard Victor Hugo', '06000', 'Nice', '6&7 ét', 11, 17, 95.0, 4, 2, 2, 'Appartement'),
+                                                                                                                                                                           ('Pavillon avec jardin', '7', 'Allée des Cerisiers', '44000', 'Nantes', NULL, 13, 17, 130.0, 5, 4, 2, 'Maison'),
+                                                                                                                                                                           ('Loft industriel', '22', 'Rue de la Soie', '69100', 'Villeurbanne', 'RDC', 14, 17, 80.0, 2, 1, 1, 'Loft'),
+                                                                                                                                                                           ('Chalet de montagne', '3', 'Chemin des Sapins', '74400', 'Chamonix', NULL, 15, 17, 85.0, 3, 2, 1, 'Chalet'),
+                                                                                                                                                                           ('Penthouse vue mer', '45', 'Promenade des Anglais', '06000', 'Nice', '5e ét', 6, 17, 150.0, 5, 3, 3, 'Appartement'),
+                                                                                                                                                                           ('Maison d''architecte', '9', 'Rue des Oliviers', '13008', 'Marseille', NULL, 7, 17, 180.0, 6, 4, 3, 'Maison'),
+                                                                                                                                                                           ('Studio d''artiste', '14', 'Rue de la Croix-Rouge', '84000', 'Avignon', '2e ét', 10, 17, 35.0, 1, 1, 1, 'Studio');
+
+INSERT INTO ANNONCE (DATE_ANNONCE, ID_BIEN, ID_AGENT, ID_PROPRIETAIRE, TITRE, DESCRIPTION, PRIX) VALUES
+                                                                                                     (CURDATE(), 6, 17, 6, 'Superbe appartement lumineux au cœur de Paris',
+                                                                                                      'Magnifique appartement de 3 pièces situé dans le 1er arrondissement de Paris. Parfaitement agencé, il offre un cadre de vie idéal en plein centre-ville. Proche de toutes commodités.',
+                                                                                                      800.00),
+
+                                                                                                     (CURDATE(), 7, 17, 7, 'Charmante maison familiale avec jardin à Lyon',
+                                                                                                      'Belle maison de 5 pièces avec un jardin bien entretenu. Idéale pour une famille, elle offre un cadre de vie paisible tout en restant proche du centre-ville de Lyon. Parfait équilibre entre confort et praticité.',
+                                                                                                      900.00),
+
+                                                                                                     (CURDATE(), 8, 17, 10, 'Studio étudiant pratique au cœur de Toulouse',
+                                                                                                      'Studio fonctionnel et bien situé, parfait pour les étudiants. À proximité immédiate des universités et des commerces, il offre tout le nécessaire pour une vie étudiante confortable.',
+                                                                                                      1000.00),
+
+                                                                                                     (CURDATE(), 9, 17, 11, 'Loft moderne et spacieux à Paris',
+                                                                                                      'Superbe loft au design contemporain situé dans le prestigieux 8ème arrondissement. Espace de vie ouvert, lumineux et modulable. Une opportunité rare sur le marché parisien.',
+                                                                                                      700.00),
+
+                                                                                                     (CURDATE(), 10, 17, 13, 'Villa de luxe avec piscine à Antibes',
+                                                                                                      'Magnifique villa avec vue mer, dotée d''une piscine privée et d''un jardin paysager. Cette propriété d''exception offre des prestations haut de gamme dans un cadre idyllique sur la Côte d''Azur.',
+                                                                                                      950.00);

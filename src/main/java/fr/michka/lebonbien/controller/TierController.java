@@ -21,6 +21,8 @@ public abstract class TierController {
     private Button deconnexion;
     @FXML
     private Label agentNameLabel;
+    @FXML
+    private Label holderId;
 
     private Application application;
 

@@ -22,6 +22,8 @@ public class ProprietaireController extends TierController{
     private Button deconnexion;
     @FXML
     private Label agentNameLabel;
+    @FXML
+    private Label holderId;
 
     private Application application;
 

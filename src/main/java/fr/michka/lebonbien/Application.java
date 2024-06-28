@@ -1,9 +1,6 @@
 package fr.michka.lebonbien;
 
-import fr.michka.lebonbien.controller.AgentController;
-import fr.michka.lebonbien.controller.AnnonceController;
-import fr.michka.lebonbien.controller.ConnexionController;
-import fr.michka.lebonbien.controller.ProprietaireController;
+import fr.michka.lebonbien.controller.*;
 import fr.michka.lebonbien.dao.AnnonceDAO;
 import fr.michka.lebonbien.dao.BienDAO;
 import fr.michka.lebonbien.dao.TierDAO;
@@ -57,8 +54,10 @@ public class Application extends javafx.application.Application implements Event
     @Override
     public void handle(ActionEvent actionEvent) {
         System.out.println("Button clicked");
-        if ("switch2Annonces".equals(((Button) actionEvent.getSource()).getId())) {
+        if ("switch2Annonces".equals(((Button) actionEvent.getSource()).getId()) || "supprimerAnnonce".equals(((Button) actionEvent.getSource()).getId())) {
             FXMLLoader annonceFxmlLoader = new FXMLLoader(Application.class.getResource("annonces.fxml"));
+            AnnonceController controller = new AnnonceController();
+            annonceFxmlLoader.setController(controller);
             String menuButtonCSS = Objects.requireNonNull(this.getClass().getResource("material-menu-button.css")).toExternalForm();
             try {
                 Scene annonceScene = new Scene(annonceFxmlLoader.load());
@@ -71,10 +70,13 @@ public class Application extends javafx.application.Application implements Event
             }
         } else if ("switch2AgentOnly".equals(((Button) actionEvent.getSource()).getId())) {
             FXMLLoader agentOnlyFxmlLoader = new FXMLLoader(Application.class.getResource("annonces.fxml"));
+            AnnonceController controller = new AnnonceController();
+            agentOnlyFxmlLoader.setController(controller);
             String menuButtonCSS = Objects.requireNonNull(this.getClass().getResource("material-menu-button.css")).toExternalForm();
             try {
                 Scene annonceScene = new Scene(agentOnlyFxmlLoader.load());
-                ((AnnonceController) agentOnlyFxmlLoader.getController()).setAgentOnly(true);
+                ((Button) annonceScene.lookup("#ajouterAnnonce")).setText("Ajouter un bien");
+                ((AnnonceController) agentOnlyFxmlLoader.getController()).setAgentOnly(true, this.getAgentId());
                 ((AnnonceController) agentOnlyFxmlLoader.getController()).initializeHandler(this);
                 annonceScene.getStylesheets().add(menuButtonCSS);
                 this.stage.setScene(annonceScene);
@@ -109,7 +111,10 @@ public class Application extends javafx.application.Application implements Event
                 throw new RuntimeException(e);
             }
         } else if ("agentButton".equals(((Button) actionEvent.getSource()).getId())) {
+            System.out.println(this.agentId);
             FXMLLoader annonceFxmlLoader = new FXMLLoader(Application.class.getResource("annonces.fxml"));
+            AnnonceController controller = new AnnonceController();
+            annonceFxmlLoader.setController(controller);
             String menuButtonCSS = Objects.requireNonNull(this.getClass().getResource("material-menu-button.css")).toExternalForm();
             try {
                 Scene annonceScene = new Scene(annonceFxmlLoader.load());
@@ -129,6 +134,19 @@ public class Application extends javafx.application.Application implements Event
                 Scene connexionScene = new Scene(connexionFxmlLoader.load());
                 connexionScene.getStylesheets().add(menuButtonCSS);
                 stage.setScene(connexionScene);
+                stage.show();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } else if ("ajouterAnnonce".equals(((Button) actionEvent.getSource()).getId())) {
+            String menuButtonCSS = this.getClass().getResource("material-menu-button.css").toExternalForm();
+            FXMLLoader ajouterFxmlLoader = new FXMLLoader(Application.class.getResource("ajouter-annonce.fxml"));
+            ajouterFxmlLoader.setController(new AjouterController());
+            ((ConnexionController) ajouterFxmlLoader.getController()).initializeHandler(this);
+            try {
+                Scene ajouterScene = new Scene(ajouterFxmlLoader.load());
+                ajouterScene.getStylesheets().add(menuButtonCSS);
+                stage.setScene(ajouterScene);
                 stage.show();
             } catch (IOException e) {
                 throw new RuntimeException(e);

@@ -20,15 +20,15 @@ public class Tier {
 
     public Tier(String name) {
         this.name = name;
-        FXMLLoader annonceFxmlLoader = new FXMLLoader(Application.class.getResource("tier.fxml"));
-        AnchorPane annoncePane = null;
+        FXMLLoader tierFxmlLoader = new FXMLLoader(Application.class.getResource("tier.fxml"));
+        AnchorPane tierPane = null;
         try {
-            annoncePane = annonceFxmlLoader.load();
+            tierPane = tierFxmlLoader.load();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        ((Label) annoncePane.lookup("#holderName")).setText(name);
-        this.component = annoncePane;
+        ((Label) tierPane.lookup("#holderName")).setText(name);
+        this.component = tierPane;
     }
 
     public Tier(TiersEntity tiersEntity) {
@@ -41,6 +41,8 @@ public class Tier {
             throw new RuntimeException(e);
         }
         ((Label) tierPane.lookup("#holderName")).setText(name);
+        ((Label) tierPane.lookup("#holderID")).setText(String.valueOf(tiersEntity.getIdTiers()));
+
         this.component = tierPane;
     }
 

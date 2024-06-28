@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
-<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="664.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.michka.lebonbien.controller.AnnonceController">
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="664.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label alignment="TOP_LEFT" layoutX="227.0" layoutY="110.0" prefHeight="26.0" prefWidth="124.0" text="Tous les biens :" />
       <MenuButton layoutX="744.0" layoutY="106.0" mnemonicParsing="false" text="Filtres">
@@ -106,5 +106,6 @@
             </GridPane>
          </content>
       </ScrollPane>
+       <MFXButton layoutX="650.0" layoutY="650.0" prefHeight="40.0" prefWidth="159.0" style="-fx-background-color: GREY; -fx-color: WHITE;" text="Ajouter une annonce" fx:id="ajouterAnnonce"/>
    </children>
 </AnchorPane>

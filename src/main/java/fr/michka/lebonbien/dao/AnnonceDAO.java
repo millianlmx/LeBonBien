@@ -15,6 +15,7 @@ public class AnnonceDAO implements DAOInterface<AnnonceEntity>{
     @Override
     public int create(AnnonceEntity data) {
         EntityTransaction transaction = entityManager.getTransaction();
+        transaction.begin();
         System.out.println("Transaction created: " + transaction);
         entityManager.persist(data);
         System.out.println("Data persisted: " + data);
@@ -25,6 +26,7 @@ public class AnnonceDAO implements DAOInterface<AnnonceEntity>{
     @Override
     public int update(AnnonceEntity data) {
          EntityTransaction transaction = entityManager.getTransaction();
+         transaction.begin();
          entityManager.merge(data);
          transaction.commit();
          return 0;
@@ -32,6 +34,7 @@ public class AnnonceDAO implements DAOInterface<AnnonceEntity>{
     @Override
     public int delete(AnnonceEntity data) {
          EntityTransaction transaction = entityManager.getTransaction();
+         transaction.begin();
          entityManager.remove(data);
          transaction.commit();
          return 0;

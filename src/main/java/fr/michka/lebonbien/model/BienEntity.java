@@ -1,11 +1,25 @@
 package fr.michka.lebonbien.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Filter;
+import org.hibernate.annotations.FilterDef;
+import org.hibernate.annotations.ParamDef;
 
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "BIEN", schema = "michkaDB", catalog = "")
+@FilterDef(
+        name="byIdAgent",
+        parameters = @ParamDef(
+                name="ID_AGENT",
+                type=int.class
+        )
+)
+@Filter(
+        name="byIdAgent",
+        condition="ID_AGENT = :ID_AGENT"
+)
 public class BienEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -32,6 +46,9 @@ public class BienEntity {
     @Basic
     @Column(name = "ID_PROPRIETAIRE", nullable = false)
     private int idProprietaire;
+    @Basic
+    @Column(name = "ID_AGENT", nullable = false)
+    private int idAgent;
     @Basic
     @Column(name = "SURFACE", nullable = false, precision = 2)
     private BigDecimal surface;
@@ -150,5 +167,13 @@ public class BienEntity {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public int getIdAgent() {
+        return idAgent;
+    }
+
+    public void setIdAgent(int idAgent) {
+        this.idAgent = idAgent;
     }
 }

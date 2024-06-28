@@ -6,6 +6,7 @@ import fr.michka.lebonbien.dao.AnnonceDAO;
 import fr.michka.lebonbien.dao.BienDAO;
 import fr.michka.lebonbien.dao.TierDAO;
 import fr.michka.lebonbien.model.AnnonceEntity;
+import fr.michka.lebonbien.model.BienEntity;
 import fr.michka.lebonbien.model.TiersEntity;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -26,11 +27,15 @@ public class AnnonceController {
     private Button switch2AgentOnly;
     @FXML
     private Label agentNameLabel;
+    @FXML
+    private Button ajouterAnnonce;
 
     private Boolean agentOnly = false;
+    private int agentId;
 
-    public void setAgentOnly(Boolean agentOnly) {
+    public void setAgentOnly(Boolean agentOnly, int agentId) {
         this.agentOnly = agentOnly;
+        this.agentId = agentId;
     }
 
     private Application application;
@@ -40,22 +45,56 @@ public class AnnonceController {
         switch2Proprietaires.setOnAction(this.application);
         switch2AgentOnly.setOnAction(this.application);
         deconnexion.setOnAction(this.application);
+        ajouterAnnonce.setOnAction(this.application);
         TierDAO tierDAO = new TierDAO();
         TiersEntity currentAgent = tierDAO.findById(this.application.getAgentId());
+        System.out.println("Init !");
+        System.out.println(this.application.getAgentId());
         agentNameLabel.setText(currentAgent.getNomTiers() + " " + currentAgent.getPrenomTiers());
+
+        AnnonceDAO annonceDAO = new AnnonceDAO();
+        BienDAO bienDAO = new BienDAO();
+        System.out.println(this.agentId);
+
+        if(this.agentOnly) {
+            BienEntity[] bienEntities = bienDAO.findAllRelatedToAgent(this.agentId);
+            for(BienEntity bienEntity : bienEntities) {
+                Annonce annonce = new Annonce(null, bienEntity, true);
+
+                annonce.setOnAction(actionEvent -> {
+                    System.out.println("Suppression du bien " + annonce.getTitle());
+                    bienDAO.delete(bienEntity);
+                    this.application.handle(actionEvent);
+                }, "switch2AgentOnly");
+
+                annonceGrid.add(
+                        annonce.getComponent(),
+                        annonceGrid.getChildren().toArray().length % 2,
+                        annonceGrid.getChildren().toArray().length / 2
+                );
+            }
+        } else {
+            AnnonceEntity[] annonceEntities = annonceDAO.findAll();
+            for (AnnonceEntity annonceEntity : annonceEntities) {
+                Annonce annonce = new Annonce(annonceEntity, bienDAO.findById(annonceEntity.getIdBien()), false);
+
+                annonce.setOnAction(actionEvent -> {
+                    System.out.println("Suppression de l'annonce " + annonce.getTitle());
+                    annonceDAO.delete(annonceEntity);
+                    this.application.handle(actionEvent);
+                }, null);
+
+                annonceGrid.add(
+                        annonce.getComponent(),
+                        annonceGrid.getChildren().toArray().length % 2,
+                        annonceGrid.getChildren().toArray().length / 2
+                );
+            }
+        }
     }
 
     @FXML
     public void initialize() {
-        AnnonceDAO annonceDAO = new AnnonceDAO();
-        BienDAO bienDAO = new BienDAO();
-        AnnonceEntity[] annonceEntities = this.agentOnly ? annonceDAO.findAllRelatedToAgent(this.application.getAgentId()) : annonceDAO.findAll();
-        for (AnnonceEntity annonceEntity : annonceEntities) {
-            annonceGrid.add(
-                    new Annonce(annonceEntity, bienDAO.findById(annonceEntity.getIdBien())).getComponent(),
-                    annonceGrid.getChildren().toArray().length % 2,
-                    annonceGrid.getChildren().toArray().length / 2
-            );
-        }
+
     }
 }

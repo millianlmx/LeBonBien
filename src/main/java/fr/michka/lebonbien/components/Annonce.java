@@ -3,7 +3,10 @@ package fr.michka.lebonbien.components;
 import fr.michka.lebonbien.Application;
 import fr.michka.lebonbien.model.AnnonceEntity;
 import fr.michka.lebonbien.model.BienEntity;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
@@ -15,6 +18,15 @@ public class Annonce {
     private double area;
 
     private final AnchorPane component;
+
+    public void setOnAction(EventHandler<ActionEvent> eventHandler, String id) {
+        if (id != null) {
+            ((Button) this.component.lookup("#"+ id)).setOnAction(eventHandler);
+        } else {
+            ((Button) this.component.lookup("#supprimerAnnonce")).setOnAction(eventHandler);
+        }
+
+    }
 
     public Annonce(String title, int price, int area) {
         this.title = title;
@@ -33,10 +45,7 @@ public class Annonce {
         this.component = annoncePane;
     }
 
-    public Annonce(AnnonceEntity annonceEntity, BienEntity bienEntity) {
-        this.title = annonceEntity.getTitre();
-        this.price = annonceEntity.getPrix().doubleValue();
-        this.area = bienEntity.getSurface().doubleValue();
+    public Annonce(AnnonceEntity annonceEntity, BienEntity bienEntity, Boolean agentOnly) {
         FXMLLoader annonceFxmlLoader = new FXMLLoader(Application.class.getResource("annonce.fxml"));
         AnchorPane annoncePane = null;
         try {
@@ -44,9 +53,21 @@ public class Annonce {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        if (!agentOnly) {
+            this.title = annonceEntity.getTitre();
+            this.price = annonceEntity.getPrix().doubleValue();
+            this.area = bienEntity.getSurface().doubleValue();
+        } else {
+            this.title = "ID : " + bienEntity.getIdBien();
+            this.area = bienEntity.getSurface().doubleValue();
+            this.price = 0;
+            annoncePane.lookup("#supprimerAnnonce").setId("switch2AgentOnly");
+        }
+
         ((Label) annoncePane.lookup("#title")).setText(title);
-        ((Label) annoncePane.lookup("#area")).setText(String.valueOf(area));
-        ((Label) annoncePane.lookup("#price")).setText(String.valueOf(price) + "€");
+        ((Label) annoncePane.lookup("#area")).setText(area + "m²");
+        ((Label) annoncePane.lookup("#price")).setText("N/A €");
         this.component = annoncePane;
     }
 
